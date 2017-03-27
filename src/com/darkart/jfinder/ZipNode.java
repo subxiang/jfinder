@@ -23,8 +23,9 @@ public class ZipNode extends FileNode {
 			Enumeration<? extends ZipEntry> entries = file.entries();
 			while (entries.hasMoreElements()) {
 				ZipEntry entry = entries.nextElement();
-				nodes.add(JavaResourceFactory.getInstance().create(entry, this));
+				nodes.add(ResourceNodeFactory.getInstance().create(entry, this));
 			}
+			file.close();
 			return nodes;
 		} catch (Exception e) {
 			throw new RuntimeException(e);

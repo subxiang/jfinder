@@ -13,7 +13,7 @@ public class ClasspathResource implements Traversable {
 	public void traverse(Visitor visitor, Matcher ignore) {
 		for (String pathElement : pathElements) {
 			File resource = new File(pathElement);
-			new JavaResourceTree(resource).traverse(visitor, ignore);
+			new ResourceTree(resource).traverse(visitor, ignore);
 		}
 	}
 

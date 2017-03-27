@@ -15,10 +15,14 @@ public class FileContentMatcher implements Matcher {
 			if (node instanceof FileNode) {
 				File file = ((FileNode) node).getResource();
 				BufferedReader reader = new BufferedReader(new FileReader(file));
-				for (String line; (line = reader.readLine()) != null; ) {
-					if (line.matches(q)) {
-						return true;
+				try {					
+					for (String line; (line = reader.readLine()) != null; ) {
+						if (line.matches(q)) {
+							return true;
+						}
 					}
+				} finally {
+					reader.close();
 				}
 			}
 		} catch (Exception e) {

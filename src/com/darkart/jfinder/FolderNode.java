@@ -17,7 +17,7 @@ public class FolderNode extends TreeNode {
 		List<TreeNode> nodes = new ArrayList<TreeNode>();
 		File[] files = resource.listFiles();
 		for (File f : files) {
-			nodes.add((TreeNode)JavaResourceFactory.getInstance().create(f, this));
+			nodes.add((TreeNode)ResourceNodeFactory.getInstance().create(f, this));
 		}
 		
 		return nodes;

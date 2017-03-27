@@ -3,10 +3,10 @@ package com.darkart.jfinder;
 import java.io.File;
 import java.util.zip.ZipEntry;
 
-public class JavaResourceFactory {
-	private static final JavaResourceFactory instance = new JavaResourceFactory();
+public class ResourceNodeFactory {
+	private static final ResourceNodeFactory instance = new ResourceNodeFactory();
 	
-	public static JavaResourceFactory getInstance() {
+	public static ResourceNodeFactory getInstance() {
 		return instance;
 	}
 	
